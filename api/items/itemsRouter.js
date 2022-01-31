@@ -1,8 +1,9 @@
 const express = require("express");
 const router = require("express").Router();
 const Items = require("./items-model");
+const { checkId, checkBody } = require("./items-middleware");
 
-router.post("/", (req, res, next) => {
+router.post("/", checkBody, checkId, (req, res, next) => {
   const {
     item_name,
     item_location,

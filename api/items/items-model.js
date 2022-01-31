@@ -18,6 +18,7 @@ const insert = async (item) => {
     "item_location",
     "item_description",
     "item_price",
+    "available",
     "owner_id",
   ]);
   return item_id;

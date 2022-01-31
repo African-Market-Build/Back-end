@@ -10,6 +10,7 @@
     "migrate:prod": "heroku run knex migrate:latest -a africas-market-place",
     "rollback:prod": "heroku run knex migrate:rollback -a africas-market-place",
     "database:prod": "heroku pg:psql -a africas-market-place",
+    "resetdb": "knex migrate:rollback && knex migrate:latest",
     "seed:prod": "heroku run knex seed:run -a africas-market-place",
     "test": "cross-env NODE_ENV=testing jest --verbose --runInBand",
     "deploy": "git push heroku main"
