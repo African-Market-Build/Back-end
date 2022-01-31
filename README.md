@@ -29,6 +29,6 @@ Add items to sell
   "item_location": "philly",
   "item_description": "a beautiful cup",
   "item_price": "12",
-  "available": true, (OPTIONAL, defaults to false)
+  "available": false
   "owner_id": 1
   }
