@@ -15,6 +15,9 @@ Login an existing owner
 - {username: "cheese", password: "dog"}
 - returns { "message": "welcome, username", "token": "token"}
 
+* [GET] /api/owners
+* returns all owners array
+
 Add items to sell
 
 - [POST] /api/items

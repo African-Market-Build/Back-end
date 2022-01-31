@@ -1,7 +1,7 @@
 const db = require("../data/db-config");
 
 const findAll = () => {
-  return db("owners");
+  return db("owners").select("owner_id", "username", "created_at");
 };
 const findBy = (filter) => {
   return db("owners").where(filter);
