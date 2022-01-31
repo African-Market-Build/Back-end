@@ -1,4 +1,4 @@
-const Users = require("./users-model");
+const Owners = require("./owners-model");
 
 const checkBody = (req, res, next) => {
   const { username, password } = req.body;
@@ -10,7 +10,7 @@ const checkBody = (req, res, next) => {
 };
 
 const checkExists = async (req, res, next) => {
-  const user = await Users.findAll();
+  const user = await Owners.findAll();
   const exists = user.some((user) => user.username === req.body.username);
   if (exists) {
     res.status(422).json({ message: "That username is already taken" });

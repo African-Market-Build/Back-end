@@ -1,13 +1,13 @@
 const router = require("express").Router();
-const Users = require("../users/users-model");
+const Owners = require("../owners/owners-model");
 const bcrypt = require("bcryptjs");
 const createToken = require("./auth-create-token");
-const { checkBody, checkExists } = require("../users/users-middleware");
+const { checkBody, checkExists } = require("../owners/owners-middleware");
 
 router.post("/register", checkBody, checkExists, (req, res, next) => {
   const { username, password } = req.body;
   const hash = bcrypt.hashSync(password, 8);
-  Users.insert({ username, password: hash })
+  Owners.insert({ username, password: hash })
     .then((users) => {
       res.status(201).json(users);
     })
@@ -15,7 +15,7 @@ router.post("/register", checkBody, checkExists, (req, res, next) => {
 });
 router.post("/login", checkBody, (req, res, next) => {
   let { username, password } = req.body;
-  Users.findBy({ username })
+  Owners.findBy({ username })
     .then(([user]) => {
       if (user && bcrypt.compareSync(password, user.password)) {
         const token = createToken(user);

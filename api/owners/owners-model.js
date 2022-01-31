@@ -1,17 +1,17 @@
 const db = require("../data/db-config");
 
 const findAll = () => {
-  return db("users");
+  return db("owners");
 };
 const findBy = (filter) => {
-  return db("users").where(filter);
+  return db("owners").where(filter);
 };
-const findById = (user_id) => {
-  return db("users").where({ user_id }).first();
+const findById = (owner_id) => {
+  return db("owners").where({ owner_id }).first();
 };
 
 const insert = async (user) => {
-  const [user_id] = await db("users").insert(user, ["user_id", "username"]);
+  const [user_id] = await db("owners").insert(user, ["owner_id", "username"]);
   return user_id;
 };
 
