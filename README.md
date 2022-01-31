@@ -18,6 +18,9 @@ Login an existing owner
 Add items to sell
 
 - [POST] /api/items
+
+* Must have valid token
+
 - {
   "item_name": "cup",
   "item_location": "philly",
