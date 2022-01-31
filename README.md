@@ -1,6 +1,6 @@
 # African Market Place
 
-server URL where you will make API calls to : https://github.com/African-Market-Build/Back-end . You should receive a "welcome hahaha" if you run it in directly in the browser.
+server URL where you will make API calls to : https://africas-market-place.herokuapp.com/ . You should receive a "welcome hahaha" if you run it in directly in the browser.
 
 # Owners
 

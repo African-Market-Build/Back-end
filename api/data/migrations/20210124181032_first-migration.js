@@ -7,18 +7,18 @@ exports.up = async (knex) => {
       owners.timestamps(false, true);
     })
     .createTable("items", (items) => {
-      items.increments("items_id");
+      items.increments("item_id");
       items.string("item_name", 200).notNullable();
       items.string("item_location", 200).notNullable();
       items.string("item_description", 200).notNullable();
-      items.integer("items_price").notNullable();
-      items.integer("available").defaultsTo(false);
+      items.integer("item_price").notNullable();
+      items.boolean("available").defaultsTo(false);
       items
         .integer("owner_id")
         .notNullable()
         .references("owner_id")
         .inTable("owners")
-        .unSigned();
+        .unsigned();
     });
 };
 
