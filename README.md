@@ -18,7 +18,9 @@ Login an existing owner
 * [GET] /api/owners
 * returns all owners array
 
-Add items to sell
+# Itema
+
+Add new item
 
 - [POST] /api/items
 
