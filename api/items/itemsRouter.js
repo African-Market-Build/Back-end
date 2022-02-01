@@ -2,6 +2,7 @@ const express = require("express");
 const router = require("express").Router();
 const Items = require("./items-model");
 const { checkId, checkBody, idParams } = require("./items-middleware");
+const restricted = require("./restricted");
 
 router.get("/", (req, res, next) => {
   Items.findAll()
@@ -19,7 +20,7 @@ router.get("/:id", idParams, (req, res, next) => {
     .catch(next);
 });
 
-router.post("/", checkBody, checkId, (req, res, next) => {
+router.post("/", checkBody, checkId, restricted, (req, res, next) => {
   const {
     item_name,
     item_location,
@@ -42,15 +43,22 @@ router.post("/", checkBody, checkId, (req, res, next) => {
     .catch(next);
 });
 
-router.put("/:id", idParams, checkBody, checkId, (req, res, next) => {
-  Items.update(req.params.id, req.body)
-    .then((item) => {
-      res.status(200).json(item);
-    })
-    .catch(next);
-});
+router.put(
+  "/:id",
+  idParams,
+  checkBody,
+  checkId,
+  restricted,
+  (req, res, next) => {
+    Items.update(req.params.id, req.body)
+      .then((item) => {
+        res.status(200).json(item);
+      })
+      .catch(next);
+  }
+);
 
-router.delete("/:id", idParams, (req, res, next) => {
+router.delete("/:id", idParams, restricted, (req, res, next) => {
   Items.remove(req.params.id)
     .then((item) => {
       res.json(item);
