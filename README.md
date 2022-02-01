@@ -37,10 +37,10 @@ Add new item
 
 Get all items
 
-[GET] /api/items
-return all items
+- [GET] /api/items
+- return all items
 
 Get items by id
 
-[GET] /api/items/:id
-return item with that specific id
+- [GET] /api/items/:id
+- return item with that specific id
