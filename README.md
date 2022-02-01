@@ -18,6 +18,10 @@ server URL where you will make API calls to : https://africas-market-place.herok
 * [GET] /api/owners
 * returns all owners array
 
+## [GET] /api/owners
+
+- returns all owners
+
 # Items
 
 ## Add new item
