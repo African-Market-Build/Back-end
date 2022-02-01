@@ -70,12 +70,16 @@ server URL where you will make API calls to : https://africas-market-place.herok
   }
   ]
   }
+<<<<<<< HEAD
   If the owner is not selling any items, it will return:
   {
   "owner_id": 2,
   "username": "laysha",
   "items": []
   }
+=======
+  (note: still haven't created middleware)
+>>>>>>> 6654ebffcb06011ecc0b4078c877f5d841d53418
 
 ## Update an item
 
