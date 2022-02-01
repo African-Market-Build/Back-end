@@ -18,7 +18,7 @@ router.get("/:id", checkId, (req, res, next) => {
     .catch(next);
 });
 
-router.get("/:id/items", (req, res, next) => {
+router.get("/:id/items", checkId, (req, res, next) => {
   Owners.findItems(req.params.id).then((owners) => {
     res.json(owners);
   });
