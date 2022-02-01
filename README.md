@@ -71,11 +71,11 @@ server URL where you will make API calls to : https://africas-market-place.herok
   ]
   }
   - If the owner is not selling any items, it will return:
-  {
-  "owner_id": 2,
-  "username": "laysha",
-  "items": []
-  }
+    {
+    "owner_id": 2,
+    "username": "laysha",
+    "items": []
+    }
 
 ## Update an item
 
