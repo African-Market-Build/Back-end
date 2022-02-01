@@ -53,3 +53,10 @@ server URL where you will make API calls to : https://africas-market-place.herok
 - [PUT] /api/items/:id
 - requires params id and request body
 - returns the updated item
+
+## Delete an item
+
+- [DELETE] /api/items/:id
+
+* requires params id
+* returns all items except the one removed

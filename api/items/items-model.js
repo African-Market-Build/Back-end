@@ -29,10 +29,16 @@ const update = async (item_id, item) => {
   return findById(item_id);
 };
 
+const remove = async (item_id) => {
+  await db("items").delete().where({ item_id });
+  return findAll();
+};
+
 module.exports = {
   findAll,
   findById,
   findBy,
   insert,
   update,
+  remove,
 };

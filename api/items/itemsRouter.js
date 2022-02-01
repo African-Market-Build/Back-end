@@ -50,4 +50,12 @@ router.put("/:id", idParams, checkBody, checkId, (req, res, next) => {
     .catch(next);
 });
 
+router.delete("/:id", idParams, (req, res, next) => {
+  Items.remove(req.params.id)
+    .then((item) => {
+      res.json(item);
+    })
+    .catch(next);
+});
+
 module.exports = router;
