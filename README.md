@@ -54,6 +54,22 @@ server URL where you will make API calls to : https://africas-market-place.herok
 - [GET] /api/items/:id
 - return item with that specific id
 
+## Get all items being sold by a specific owner
+
+- [GET] /api/owners/:id/items
+- requires owner_id as a param
+- return example: {
+  "owner_id": 1,
+  "username": "javier",
+  "items": [
+  {
+  "item_id": 1,
+  "item_name": "MacBook Pro",
+  "item_location": "Florida",
+  "item_price": 1000
+  }
+  }
+
 ## Update an item
 
 - [PUT] /api/items/:id
