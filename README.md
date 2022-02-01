@@ -2,14 +2,14 @@
 
 server URL where you will make API calls to : https://africas-market-place.herokuapp.com/ . You should receive a "welcome hahaha" if you run it in directly in the browser.
 
-### Owners
+# Owners
 
-# Register a new owner
+## Register a new owner
 
 - [POST] /api/auth/register
 - {username: "cheese", password:"dog"}
 
-# Login an existing owner
+## Login an existing owner
 
 - [POST] /api/auth/login
 - body request: {username: "cheese", password: "dog"}
@@ -18,9 +18,9 @@ server URL where you will make API calls to : https://africas-market-place.herok
 * [GET] /api/owners
 * returns all owners array
 
-## Items
+# Items
 
-# Add new item
+## Add new item
 
 - [POST] /api/items
 - requires valid token for successful request
@@ -34,12 +34,12 @@ server URL where you will make API calls to : https://africas-market-place.herok
   "owner_id": 1
   }
 
-# Get all items
+## Get all items
 
 - [GET] /api/items
 - return all items
 
-# Get items by id
+## Get items by id
 
 - [GET] /api/items/:id
 - return item with that specific id
