@@ -1,4 +1,5 @@
 const Owners = require("../owners/owners-model");
+const Items = require("../items/items-model");
 
 const checkId = async (req, res, next) => {
   const { owner_id } = req.body;
@@ -29,7 +30,19 @@ const checkBody = async (req, res, next) => {
   }
 };
 
+const idParams = async (req, res, next) => {
+  const id = await Items.findById(req.params.id);
+  if (!id) {
+    res
+      .status(404)
+      .json({ message: `Item with id of ${req.params.id} not found` });
+  } else {
+    next();
+  }
+};
+
 module.exports = {
   checkId,
   checkBody,
+  idParams,
 };

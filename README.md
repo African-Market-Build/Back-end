@@ -18,6 +18,8 @@ Login an existing owner
 * [GET] /api/owners
 * returns all owners array
 
+# Items
+
 Add items to sell
 
 - [POST] /api/items
@@ -32,3 +34,13 @@ Add items to sell
   "available": true, (OPTIONAL, defaults to false)
   "owner_id": 1
   }
+
+Get all items
+
+[GET] /api/items
+return all items
+
+Get items by id
+
+[GET] /api/items/:id
+return item with that specific id

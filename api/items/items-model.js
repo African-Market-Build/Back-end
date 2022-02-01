@@ -5,7 +5,7 @@ const findAll = () => {
 };
 
 const findById = (item_id) => {
-  return db("items").where("item_id", item_id);
+  return db("items").where("item_id", item_id).first();
 };
 const findBy = (filter) => {
   return db("items").where(filter);

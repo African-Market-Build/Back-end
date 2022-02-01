@@ -1,7 +1,23 @@
 const express = require("express");
 const router = require("express").Router();
 const Items = require("./items-model");
-const { checkId, checkBody } = require("./items-middleware");
+const { checkId, checkBody, idParams } = require("./items-middleware");
+
+router.get("/", (req, res, next) => {
+  Items.findAll()
+    .then((items) => {
+      res.json(items);
+    })
+    .catch(next);
+});
+
+router.get("/:id", idParams, (req, res, next) => {
+  Items.findById(req.params.id)
+    .then((items) => {
+      res.json(items);
+    })
+    .catch(next);
+});
 
 router.post("/", checkBody, checkId, (req, res, next) => {
   const {
@@ -19,9 +35,11 @@ router.post("/", checkBody, checkId, (req, res, next) => {
     item_price,
     available,
     owner_id,
-  }).then((item) => {
-    res.status(201).json(item);
-  });
+  })
+    .then((item) => {
+      res.status(201).json(item);
+    })
+    .catch(next);
 });
 
 module.exports = router;
