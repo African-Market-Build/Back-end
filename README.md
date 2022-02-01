@@ -70,6 +70,7 @@ server URL where you will make API calls to : https://africas-market-place.herok
   }
   ]
   }
+  (note: still haven't created middleware)
 
 ## Update an item
 
