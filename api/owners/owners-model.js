@@ -7,7 +7,10 @@ const findBy = (filter) => {
   return db("owners").where(filter);
 };
 const findById = (owner_id) => {
-  return db("owners").where({ owner_id }).first();
+  return db("owners")
+    .where({ owner_id })
+    .select("owner_id", "username", "created_at")
+    .first();
 };
 
 const insert = async (user) => {

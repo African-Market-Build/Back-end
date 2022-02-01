@@ -19,7 +19,17 @@ const checkExists = async (req, res, next) => {
   }
 };
 
+const checkId = async (req, res, next) => {
+  const id = await Owners.findById(req.params.id);
+  if (!id) {
+    res.status(404).json({ message: `The id ${req.params.id} does not exist` });
+  } else {
+    next();
+  }
+};
+
 module.exports = {
   checkBody,
   checkExists,
+  checkId,
 };

@@ -15,12 +15,18 @@ server URL where you will make API calls to : https://africas-market-place.herok
 - body request: {username: "cheese", password: "dog"}
 - returns { "message": "welcome, username", "token": "token"}
 
-* [GET] /api/owners
-* returns all owners array
+## Get all existing owners
 
-## [GET] /api/owners
+- [GET] /api/owners
+- returns all owners array
 
-- returns all owners
+## Get owner by id
+
+- [GET] /api/owners/:id
+
+* requires params id
+
+- return an individual owner
 
 # Items
 
