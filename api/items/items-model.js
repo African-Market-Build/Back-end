@@ -24,9 +24,15 @@ const insert = async (item) => {
   return item_id;
 };
 
+const update = async (item_id, item) => {
+  await db("items").update(item).where("item_id", item_id);
+  return findById(item_id);
+};
+
 module.exports = {
   findAll,
   findById,
   findBy,
   insert,
+  update,
 };

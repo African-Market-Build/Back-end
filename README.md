@@ -47,3 +47,9 @@ server URL where you will make API calls to : https://africas-market-place.herok
 
 - [GET] /api/items/:id
 - return item with that specific id
+
+## Update an item with id
+
+- [PUT] /api/items/:id
+- requires params id and request body
+- returns the updated item

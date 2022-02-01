@@ -42,4 +42,12 @@ router.post("/", checkBody, checkId, (req, res, next) => {
     .catch(next);
 });
 
+router.put("/:id", idParams, (req, res, next) => {
+  Items.update(req.params.id, req.body)
+    .then((item) => {
+      res.status(200).json(item);
+    })
+    .catch(next);
+});
+
 module.exports = router;
