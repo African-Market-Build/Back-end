@@ -68,6 +68,7 @@ server URL where you will make API calls to : https://africas-market-place.herok
   "item_location": "Florida",
   "item_price": 1000
   }
+  ]
   }
 
 ## Update an item
