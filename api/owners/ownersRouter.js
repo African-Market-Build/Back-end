@@ -19,9 +19,11 @@ router.get("/:id", checkId, (req, res, next) => {
 });
 
 router.get("/:id/items", checkId, (req, res, next) => {
-  Owners.findItems(req.params.id).then((owners) => {
-    res.json(owners);
-  });
+  Owners.findItems(req.params.id)
+    .then((owners) => {
+      res.json(owners);
+    })
+    .catch(next);
 });
 
 router.use = (err, req, res, next) => {
