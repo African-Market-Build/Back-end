@@ -24,7 +24,7 @@ const checkBody = async (req, res, next) => {
     !item_price ||
     !owner_id
   ) {
-    res.status(404).json({ message: "Please fill out all required fields" });
+    res.status(401).json({ message: "Please fill out all required fields" });
   } else {
     next();
   }
